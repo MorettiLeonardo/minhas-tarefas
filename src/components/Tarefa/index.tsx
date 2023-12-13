@@ -14,19 +14,21 @@ const Tarefa = ({ titulo, prioridade, status, descricao }: Props) => {
   return (
     <S.Card>
       <S.Titulo>{titulo}</S.Titulo>
-      <S.Tags>{prioridade}</S.Tags>
-      <S.Tags>{status}</S.Tags>
+      <S.Tags prioridade={prioridade}>{prioridade}</S.Tags>
+      <S.Tags status={status}>{status}</S.Tags>
       <S.Descricao value={descricao} />
       <S.BarraAcoes>
         {estaEditanto ? (
           <>
-            <S.Botao>Salvar</S.Botao>
-            <S.Botao onClick={() => setEstaEditando(false)}>Cancelar</S.Botao>
+            <S.BotaoSalvar>Salvar</S.BotaoSalvar>
+            <S.BotaoCancelarERemover onClick={() => setEstaEditando(false)}>
+              Cancelar
+            </S.BotaoCancelarERemover>
           </>
         ) : (
           <>
             <S.Botao onClick={() => setEstaEditando(true)}>Editar</S.Botao>
-            <S.Botao>Remover</S.Botao>
+            <S.BotaoCancelarERemover>Remover</S.BotaoCancelarERemover>
           </>
         )}
       </S.BarraAcoes>
