@@ -7,7 +7,7 @@ export type Props = {
 }
 
 const FiltroCard = ({ ativo, contador, legenda }: Props) => (
-  <S.Card ativo>
+  <S.Card>
     <S.Contador>{contador}</S.Contador>
     <S.Label>{legenda}</S.Label>
   </S.Card>

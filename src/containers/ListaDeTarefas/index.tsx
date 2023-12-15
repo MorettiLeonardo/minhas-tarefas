@@ -1,28 +1,13 @@
+import { useSelector } from 'react-redux'
+
 import Tarefa from '../../components/Tarefa'
 import { Container } from './styles'
 
-const tarefas = [
-  {
-    titulo: 'estudar ts',
-    descricao: 'ver aula 3',
-    prioridade: 'importante',
-    status: 'pendente'
-  },
-  {
-    titulo: 'pagar internet',
-    descricao: 'baixar boleto no email',
-    prioridade: 'urgente',
-    status: 'concluido'
-  },
-  {
-    titulo: 'academia',
-    descricao: 'fazer treino B',
-    prioridade: 'importante',
-    status: 'pendente'
-  }
-]
+import { RootReducer } from '../../store/'
 
 const ListaDeTarefas = () => {
+  const { tarefas } = useSelector((state: RootReducer) => state)
+
   return (
     <Container>
       <p>
