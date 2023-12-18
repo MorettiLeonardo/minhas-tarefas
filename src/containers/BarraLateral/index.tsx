@@ -5,6 +5,8 @@ import * as S from './styles'
 import { RootReducer } from '../../store'
 import { alteraTermo } from '../../store/reducers/filtro'
 
+import * as enuns from '../../utils/enums/tarefa'
+
 const BarraLateral = () => {
   const dispatch = useDispatch()
   const { termo } = useSelector((state: RootReducer) => state.filtro)
@@ -19,12 +21,32 @@ const BarraLateral = () => {
           onChange={(ev) => dispatch(alteraTermo(ev.target.value))}
         />
         <S.Filtros>
-          <FiltroCard contador={4} legenda="pendentes" />
-          <FiltroCard contador={2} legenda="concluidas" />
-          <FiltroCard contador={3} legenda="importantes" />
-          <FiltroCard contador={6} legenda="pendentes" />
-          <FiltroCard contador={1} legenda="urgentes" />
-          <FiltroCard ativo contador={3} legenda="concluidas" />
+          <FiltroCard
+            valor={enuns.Status.PENDENTE}
+            criterio="status"
+            legenda="pendentes"
+          />
+          <FiltroCard
+            valor={enuns.Status.CONCLUIDA}
+            criterio="status"
+            legenda="concluidas"
+          />
+          <FiltroCard
+            valor={enuns.Prioridade.IMPORTANTE}
+            criterio="prioridade"
+            legenda="importantes"
+          />
+          <FiltroCard
+            valor={enuns.Prioridade.URGENTE}
+            criterio="prioridade"
+            legenda="urgente"
+          />
+          <FiltroCard
+            valor={enuns.Prioridade.NORMAL}
+            criterio="prioridade"
+            legenda="normal"
+          />
+          <FiltroCard criterio="todas" legenda="todas" />
         </S.Filtros>
       </div>
     </S.Aside>
