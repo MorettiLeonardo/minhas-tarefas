@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import store from './store'
 import Home from './pages/Home'
+import Cadastro from './pages/Cadastro'
 
 import EstiloGlobal, { Container } from './styles'
 
@@ -13,7 +14,7 @@ const rotas = createBrowserRouter([
   },
   {
     path: '/novo',
-    element: <h1>Nova tarefa</h1>
+    element: <Cadastro />
   }
 ])
 
