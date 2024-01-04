@@ -7,7 +7,7 @@ import * as S from './styles'
 import * as enuns from '../../utils/enums/tarefa'
 
 import TarefaClass from '../../models/Tarefa'
-import { BotaoSalvar } from '../../styles'
+import { Botao, BotaoSalvar } from '../../styles'
 
 type Props = TarefaClass
 
@@ -88,7 +88,7 @@ const Tarefa = ({
           </>
         ) : (
           <>
-            <S.Botao onClick={() => setEstaEditando(true)}>Editar</S.Botao>
+            <Botao onClick={() => setEstaEditando(true)}>Editar</Botao>
             <S.BotaoCancelarERemover onClick={() => dispatch(remover(id))}>
               Remover
             </S.BotaoCancelarERemover>

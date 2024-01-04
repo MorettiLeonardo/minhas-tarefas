@@ -5,8 +5,8 @@ import { cadastrar } from '../../store/reducers/tarefas'
 
 import { MainContainer, Titulo, Campo, BotaoSalvar } from '../../styles'
 import { Form, Opcoes, Opcao } from './styles'
+
 import * as enuns from '../../utils/enums/tarefa'
-import Tarefa from '../../models/Tarefa'
 
 const Formulario = () => {
   const dispatch = useDispatch()
@@ -18,15 +18,15 @@ const Formulario = () => {
 
   const cadastrarTarefa = (evento: FormEvent) => {
     evento.preventDefault()
-    const tarefaParaAdicionar = new Tarefa(
-      titulo,
-      prioridade,
-      enuns.Status.PENDENTE,
-      descricao,
-      9
-    )
 
-    dispatch(cadastrar(tarefaParaAdicionar))
+    dispatch(
+      cadastrar({
+        titulo,
+        prioridade,
+        descricao,
+        status: enuns.Status.PENDENTE
+      })
+    )
     navigate('/')
   }
 
