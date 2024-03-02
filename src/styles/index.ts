@@ -21,6 +21,10 @@ export const MainContainer = styled.main`
   padding: 0 40px;
   height: 100vh;
   overflow-y: scroll;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
 `
 
 export const Titulo = styled.h2`

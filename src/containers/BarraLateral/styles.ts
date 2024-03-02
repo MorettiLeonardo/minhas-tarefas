@@ -5,6 +5,10 @@ export const Aside = styled.aside`
   background-color: #eee;
   height: 100vh;
   border-radius: 8px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 export const Filtros = styled.div`
